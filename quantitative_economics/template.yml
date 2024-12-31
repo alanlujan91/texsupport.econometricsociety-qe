@@ -1,0 +1,73 @@
+myst: v1
+template: template.tex
+files:
+  - econsocart.cls
+  - econsocart.cfg
+  - sample/files/figure_sample.pdf
+parts:
+  - id: abstract
+    required: true
+    description: A good abstract will begin with a short description of the problem being addressed, briefly describe the new data or analyses, then briefly states the main conclusion(s) and how they are supported and uncertainties.
+  - id: support
+    required: false
+    description: Acknowledgements and funding information.
+  - id: coeditor
+    required: false
+    description: The name of the co-editor.
+  - id: jel
+    required: true
+    description: JEL classification codes.
+  - id: appendix
+    required: false
+    description: Appendix content.
+doc:
+  - id: title
+    required: true
+    description: The title of the article.
+  - id: short_title
+    required: false
+    description: A shorter version of the title for running heads.
+  - id: authors
+    required: true
+    description: List of authors with their affiliations and email addresses.
+  - id: keywords
+    required: true
+    description: List of keywords.
+  - id: bibliography
+    required: true
+    description: Path to the bibliography file.
+options:
+  - id: draft
+    type: boolean
+    default: false
+    description: Whether to show draft mode with line numbers.
+  - id: equation_numbers
+    type: choice
+    choices:
+      - none
+      - section
+      - document
+    default: section
+    description: How to number equations.
+  - id: theorem_style
+    type: choice
+    choices:
+      - plain
+      - definition
+      - remark
+    default: plain
+    description: Style for theorem environments.
+packages:
+  - amsmath
+  - amssymb
+  - amsthm
+  - bm
+  - color
+  - etoolbox
+  - fontenc
+  - graphicx
+  - hyperref
+  - natbib
+  - textcomp
+  - times
+  - url

@@ -1,0 +1,20 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: a3054718-3167-4e19-8637-37d94fd029a0
+  title: Quantitative Economics Template
+  description: Official template for Quantitative Economics journal submissions
+  keywords:
+    - economics
+    - quantitative economics
+    - econometrics
+  authors:
+    - name: The Econometric Society
+      url: https://www.econometricsociety.org/
+  github: https://github.com/alanlujan91/texsupport.econometricsociety-qe
+site:
+  template: book-theme
+  title: Quantitative Economics Template
+  options:
+    logo: thumbnail.png
+  nav: []

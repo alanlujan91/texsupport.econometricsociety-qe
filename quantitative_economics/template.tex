@@ -1,0 +1,84 @@
+% Template for the submission to:
+%   Quantitative Economics   [qe]
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Please do not use \input{...} to include %%
+%% other tex files. Submit your LaTeX       %%
+%% manuscript as one .tex document.         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% use option [draft] for initial submission
+%            [final] for the prepublication
+\documentclass[qe,nameyear,draft]{econsocart}
+
+\usepackage{booktabs}
+\usepackage{framed}
+\usepackage{backref}
+\RequirePackage[colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue,pagebackref]{hyperref}
+
+\startlocaldefs
+
+\theoremstyle{plain}
+\newtheorem{axiom}{Axiom}
+\newtheorem{theorem}{Theorem}
+\newtheorem{claim}{Claim}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{fact}{Fact}
+
+\theoremstyle{remark}
+\newtheorem{definition}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem{remark}{Remark}
+
+\endlocaldefs
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{[-doc.title-]}
+\runtitle{[-doc.short_title-]}
+
+\begin{aug}
+[# for author in doc.authors #]
+\author[id=au[-loop.index + 1-],addressref={add[-loop.index + 1-]}]{\fnms{[-author.name.split(' ')[0]-]}~\snm{[-author.name.split(' ').slice(1).join(' ')-]}\ead[label=e[-loop.index + 1-]]{[-author.email-]}}
+[# endfor #]
+
+[# for author in doc.authors #]
+\address[id=add[-loop.index + 1-]]{[-author.affiliations[0]-]}
+[# endfor #]
+\end{aug}
+
+[# if parts.support #]
+\support{[-parts.support-]}
+[# endif #]
+
+[# if parts.coeditor #]
+\coeditor{[-parts.coeditor-]}
+[# endif #]
+
+[# if parts.abstract #]
+\begin{abstract}
+[-parts.abstract-]
+\end{abstract}
+[# endif #]
+
+\begin{keyword}
+[# for keyword in doc.keywords #]
+\kwd{[-keyword-]}
+[# endfor #]
+\end{keyword}
+
+[# if parts.jel #]
+\begin{keyword}[class=JEL]
+[# for jel in parts.jel.split('\n') #]
+\kwd{[-jel.trim()-]}
+[# endfor #]
+\end{keyword}
+[# endif #]
+
+\end{frontmatter}
+
+[-CONTENT-]
+
+\end{document}
